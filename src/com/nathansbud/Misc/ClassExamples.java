@@ -169,10 +169,39 @@ public class ClassExamples {
         System.out.println("Total Occurences: " + occurences);
         System.out.println("Largest Numbers: " + first + ", " + second);
     }
+    private static void getAges() {
+        System.out.print("How many ages would you like? ");
+        int[] ages = new int[sc.nextInt()];
+        for(int i = 0; i < ages.length; i++) {
+            System.out.print("What ages is your #" + (i + 1) + "? ");
+            ages[i] = sc.nextInt();
+        }
+
+        int max = ages[0];
+        int index = 0;
+        for(int i = 0; i < ages.length; i++) {
+            if(ages[i] > max) {
+                max = ages[i];
+            }
+            index = i;
+        }
+        System.out.println("Index #" + index + " is the oldest, at " + max);
+    }
+    private static void arrayShift(int[] data) {
+        int temp = data[0];
+        for(int i = 1; i < data.length; i++) {
+            data[i-1] = data[i];
+        }
+        data[data.length-1] = temp;
+        for (int i = 0; i < data.length; i++) {
+            System.out.print(data[i] + ", ");
+        }
+    }
+
 
     public static void main(String[] args) {
         generateStats(numbers);
-        System.out.println();
-        getElementDistance(numbers);
+        arrayShift(numbers);
+
     }
 }

@@ -27,6 +27,8 @@ public class Vectors {
         Tuple<Float, Float> resultant = addVector(l, r);
         Tuple<Float, Float> difference = subtractVector(l, r);
 
+
+
         System.out.println("Resultant: (" + resultant.x + ", " + resultant.y + ")");
         System.out.println("Difference: (" + difference.x + ", " + difference.y + ")");
         System.out.println("Angle: " + getDirection(l) + " Degrees");
