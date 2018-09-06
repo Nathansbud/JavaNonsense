@@ -10,17 +10,20 @@ public class MasterMind {
     //similar, but get the indices of each of the returned values...hmm...actually, check first if charAt(i) = true,
     //then check contains() - charAt(i)!!!!
 
+    //48-57 (Numbers), 65-90, 97-122
+
     private static Scanner sc = new Scanner(System.in);
     private static Random rand = new Random();
 
     private static boolean isCustomized = false;
-    private static int dataSet = 0;
+    private static int dataSet = 1;
     private static boolean repeatsAllowed = false;
     private static int guessSize = 4;
 
+
     private static String[][] menuOptions = {
             {"Default (4 Numbers, No Repeats)", "Custom"},
-            {"Numbers", "Letters", "Both"},
+            {"Numbers", "Letters (Capitals)", "Letters (Lowercase)", "Letters (Upper & Lower)", "Letters & Numbers (Upper)", "Letters & Numbers (Lower)", "All"},
             {"No Repeats", "Repeats Allowed"}
     };
 
@@ -49,6 +52,46 @@ public class MasterMind {
         return boundedIntChoice(1, options.length);
     }
 
+    private static int generateNumber() {
+        return rand.nextInt((57 - 48) + 1) + 48;
+    }
+
+    private static int generateUppercase() {
+        return rand.nextInt(90 - 65 + 1) + 65;
+    }
+
+    private static int generateLowercase() {
+        return rand.nextInt(122 - 97 + 1) + 97;
+    }
+
+
+
+    private static void generateString() {
+        char num;
+        char lower;
+        char upper;
+        for (int i = 0; i < guessSize; i++) {
+            switch(dataSet) {
+                case 1:
+                    num = (char)generateNumber();
+                    break;
+                case 2:
+                    upper = (char)generateUppercase();
+                    break;
+                case 3:
+                    lower = (char)generateLowercase();
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+            }
+        }
+    }
 
     public static void main(String[] args) {
         System.out.println("Welcome to Mastermind! Before we begin, would you like to customize your game, or use the default setup?");
@@ -62,5 +105,7 @@ public class MasterMind {
             System.out.println("How many characters would you like your guess to be?");
             guessSize = boundedIntChoice(1, 100);
         }
+        System.out.println("Alright, cool, let's begin!");
+
     }
 }

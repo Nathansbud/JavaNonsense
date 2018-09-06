@@ -197,11 +197,55 @@ public class ClassExamples {
             System.out.print(data[i] + ", ");
         }
     }
+    private static void timesTables() {
+        for(int i = 0; i < 10; i++) {
+            System.out.print((i+1) + ": ");
+            for (int j = 0; j < 10; j++) {
+                System.out.print(((i+1)*(j+1))+" ");
+            }
+            System.out.println();
+        }
+    }
 
+    private static String decimalToBinary(long d) {
+        String binary = "";
+        while(d > 0) {
+            if (d % 2 == 0) {
+                d /= 2;
+                binary += "0";
+            } else {
+                d -= 1;
+                d /= 2;
+                binary += "1";
+            }
+        }
+        String flipped = "";
+        for(int i = binary.length(); i > 0; i--) {
+            flipped += binary.charAt(i - 1);
+        }
+        return flipped;
+    }
+
+    private static void diamond(int length) {
+        String x;
+        boolean stop = false;
+        for(int i = 1, n = 2; i < length+1; i+=n) {
+            for (int j = 0; j < (length - i)/2; j++) {
+                System.out.print(" ");
+            }
+            System.out.print(Integer.toBinaryString((int)Math.pow(2, i)-1));
+            System.out.println();
+            if(i == length) {
+                n *= -1;
+                stop = true;
+            }
+            if(i == 1 && stop) {
+                break;
+            }
+        }
+    }
 
     public static void main(String[] args) {
-        generateStats(numbers);
-        arrayShift(numbers);
-
+        diamond(29);
     }
 }
