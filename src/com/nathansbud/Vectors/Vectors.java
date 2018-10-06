@@ -4,10 +4,10 @@ public class Vectors {
     private static Tuple<Float, Float> addVector(Tuple<Float, Float> a, Tuple<Float, Float> b) {
         return new Tuple<Float, Float>(a.x + b.x, a.y + b.y);
     }
-
     private static Tuple<Float, Float> subtractVector(Tuple<Float, Float> a, Tuple<Float, Float> b) {
         return new Tuple<Float, Float>(a.x - b.x, a.y - b.y);
     }
+
 
     private static float getDirection(Tuple<Float, Float> v) {
         float theta = (float)Math.toDegrees(Math.atan(v.y/v.x));
