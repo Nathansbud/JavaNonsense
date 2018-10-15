@@ -7,6 +7,11 @@ public class TestClass {
 
     }
 
+    TestClass(String x) {
+
+    }
+
+
     public static int getId() {
         return id;
     }

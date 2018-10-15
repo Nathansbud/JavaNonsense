@@ -4,6 +4,7 @@ import java.util.Calendar;
 public class School {
     private Student directory[];
     private String name;
+
     private int foundYear;
 
     private Calendar calendar = Calendar.getInstance();
@@ -15,15 +16,26 @@ public class School {
 
     School(String _name, String[] _studentNames, int _foundYear) {
         directory = new Student[_studentNames.length];
+        name = _name;
+        foundYear = _foundYear;
+
         for(int i = 0; i < directory.length; i++) {
-            directory[i] = new Student(_studentNames[i], 11, 16);
+            directory[i] = new Student(_studentNames[i]);
         }
     }
+
 
     public int getFoundYear() {
         return foundYear;
     }
     public int getAge() {return foundYear - calendar.get(Calendar.YEAR);}
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String _name) {
+        name = _name;
+    }
 
     public void addStudent(Student newStudent) {
         Student s[] = new Student[directory.length + 1];
@@ -33,6 +45,18 @@ public class School {
         s[s.length - 1] = newStudent;
         directory = s;
     }
+    public void addStudents(Student[] newStudents) {
+        Student s[] = new Student[directory.length + newStudents.length];
+        for(int i = 0; i < directory.length; i++) {
+            s[i] = directory[i];
+        }
+        for(int i = directory.length; i < s.length; i++) {
+            s[i] = newStudents[i];
+        }
+        directory = s;
+    }
+
+
     public void removeStudent(int index) {
         Student s[] = new Student[directory.length - 1];
         for(int i = 0; i < index; i++) {
@@ -65,7 +89,14 @@ public class School {
     public Student[] getDirectory() {
         return directory;
     }
+
     public Student getStudent(int index) {
         return directory[index];
     }
+    public Student getStudentById(int id) {
+        return directory[id-1];
+    }
+
+
+
 }

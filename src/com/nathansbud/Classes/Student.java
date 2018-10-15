@@ -1,8 +1,7 @@
 package com.nathansbud.Classes;
-import java.util.Random;
 
 public class Student {
-    private static int id = 1;
+    private static int ID = 1;
 
     private String[] names;
 
@@ -24,11 +23,16 @@ public class Student {
         age = 0;
         grade = 0;
         userName = "UserName";
-        studentID = id++;
+        studentID = ID++;
+    }
+
+    Student(String _name) {
+        names = _name.split("\\s");
+        studentID = ID++;
     }
 
     Student(String _name, int _age, int _grade) {
-        studentID = id++; //Each student's ID is simply the next ID in line, assigns new student an id then increments the static counter
+        studentID = ID++; //Each student's ID is simply the next ID in line, assigns new student an ID then increments the static counter
 
         names = _name.split("\\s");
         age = _age;
@@ -41,9 +45,8 @@ public class Student {
             classGrades[i] = (int)(Math.random() * 7 + 1);
         }
     }
-
     Student(String _name, int _age, int _grade, String[] _classNames, int[] _classGrades) {
-        studentID = id++;
+        studentID = ID++;
 
         age = _age;
         grade = _grade;
@@ -108,7 +111,7 @@ public class Student {
         return studentID;
     }
     public static int getLastID() {
-        return id;
+        return ID;
     }
 
     public int getGrade() {

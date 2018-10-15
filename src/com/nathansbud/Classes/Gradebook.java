@@ -5,11 +5,11 @@ public class Gradebook {
         String[] names = {"Zachary Amiton", "Rana Lulla", "Aryan Kothari", "Dev Khanna", "Aaryan Sanghavi", "Shaunak Shah",
                 "Aroon Das", "Shailen Sheth", "Prithvi Subrahmanyam"};
 
+
         School school = new School("American School of Bombay", names, 1981);
         school.addStudent(new Student("Meme Daddy", 11, 11));
         school.removeStudentById(5);
         school.removeStudentById(5);
-        school.removeStudent(5);
 
 
 
