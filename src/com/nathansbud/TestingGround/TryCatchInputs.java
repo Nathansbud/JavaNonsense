@@ -14,17 +14,17 @@ public class TryCatchInputs {
 
     public static void main(String[] args) {
         String s = dataInput(1, 5);
-        if(isInt) {
-            switch(Integer.parseInt(s)) {
+        if (isInt) {
+            switch (Integer.parseInt(s)) {
                 default:
                     System.out.println("WHOA");
                     break;
             }
         } else {
-            switch(s) {
+            switch (s) {
                 case "/help":
                     System.out.println("List of Commands:");
-                    for(int i = 0; i < dict.length; i++) {
+                    for (int i = 0; i < dict.length; i++) {
                         System.out.println(dict[i]);
                     }
                     break;
@@ -35,11 +35,6 @@ public class TryCatchInputs {
 
         }
 
-//        try {
-//            System.out.println(Integer.parseInt(s));
-//        } catch(NumberFormatException e) {
-//            System.out.println("owo");
-//        }
     }
 
     private static String dataInput(int min, int max) {
