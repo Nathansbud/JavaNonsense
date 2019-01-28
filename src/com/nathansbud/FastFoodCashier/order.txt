@@ -1,0 +1,4 @@
+1. Margherita Pizza  ($10.99)
+Total: $10.99
+Tax: $1.64
+Final Price: $12.63

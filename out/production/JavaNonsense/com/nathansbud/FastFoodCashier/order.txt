@@ -1,0 +1,9 @@
+1. Coca-Cola  ($700.99)
+2. Pepperoni Pizza  ($11.99)
+3. Pepperoni Pizza  ($11.99)
+4. Pepperoni Pizza  ($11.99)
+5. Pepperoni Pizza  ($11.99)
+6. Margherita Pizza  ($10.99)
+Total: $759.93994
+Tax: $149.04
+Final Price: $908.9799
