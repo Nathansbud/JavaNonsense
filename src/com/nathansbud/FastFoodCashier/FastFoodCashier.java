@@ -1,9 +1,6 @@
 package com.nathansbud.FastFoodCashier;
 
-import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -37,7 +34,7 @@ public class FastFoodCashier {
             float sum = 0;
             float sumTax = 0;
             try {
-                BufferedWriter writer = new BufferedWriter(new FileWriter("/Users/zackamiton/GitHub/JavaNonsense/src/com/nathansbud/FastFoodCashier/order.txt"));
+                BufferedWriter writer = new BufferedWriter(new FileWriter("com" + File.separator + "nathansbud" + File.separator + "FastFoodCashier" + File.separator + "order.txt"));
 
 
                 for (int i = 0; i < order.size(); i++) {
