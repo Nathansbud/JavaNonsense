@@ -14,14 +14,6 @@ public class StackTest {
         names.push("Zack");
         names.push("Kothari");
         names.push("Prithvi");
-//        if(names.contains("Zack")) System.out.println("Meme");
-//        System.out.println(names.search("Prithvi"));
-//
-//        while(!names.isEmpty()) {
-//            if(names.pop().equals("Zack")) {
-//                System.out.println("DADDY");
-//            }
-//        }
 
         Iterator<String> itr = names.iterator();
         for(Iterator<String> it = names.iterator(); it.hasNext(); ) {
