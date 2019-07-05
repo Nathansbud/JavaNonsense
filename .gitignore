@@ -1,13 +1,6 @@
+.idea/
 
-.idea/misc.xml
+*.iml
 
-.idea/modules.xml
-
-.idea/workspace.xml
-
-JavaNonsense.iml
-
-*.class
-
-.idea/vcs.xml
+out/
 

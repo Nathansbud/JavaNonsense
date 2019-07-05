@@ -2,15 +2,6 @@ package com.nathansbud.Misc;
 
 public class SortingSearching {
     static int[] list = {-5, 8, 3, 10, 1, 2, 3, 4, 5, 0};
-    public static void main(String[] args) {
-        list = selectionSort(list);
-        for (int x : list) {
-            System.out.print(x + " ");
-        }
-        System.out.println();
-        System.out.println(binarySearch(list, 0));
-
-    }
 
     public static int[] bubbleSort(int[] num) {
         for(int i = 0; i < num.length - 1; i++) {
@@ -25,6 +16,7 @@ public class SortingSearching {
 
         return num;
     }
+
     public static int binarySearch(int[] num, int search) {
         int max = num.length - 1;
         int min = 0;
@@ -40,6 +32,7 @@ public class SortingSearching {
         }
         return -1;
     }
+
     public static int[] selectionSort(int[] num) {
         int min;
         int temp;
@@ -50,11 +43,15 @@ public class SortingSearching {
                     min = j;
                 }
             }
-            temp = num[i];
             num[i] = num[min];
+            temp = num[i];
             num[min] = temp;
         }
 
         return num;
+    }
+
+    public static void main(String[] args) {
+//        list = mergeSort(list, 0, list.length - 1);
     }
 }
